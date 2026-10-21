@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspicious Message Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="brand">📩 MessageGuard</div>
+        <p>Machine Learning Based Message Detection</p>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="tag">ML PROJECT</span>
+            <h1>Suspicious Message Classification</h1>
+            <p>Check whether an SMS message is spam or likely legitimate.</p>
+        </section>
+
+        <section class="card">
+            <h2>Test Your Message</h2>
+            <p class="muted">Enter the message you want to classify below.</p>
+
+            <form id="messageForm">
+                <label for="message">Your message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    maxlength="5000"
+                    placeholder="Example: Congratulations! You have won a free prize."
+                    required
+                ></textarea>
+
+                <button type="submit" id="classifyButton">
+                    Classify Message
+                </button>
+            </form>
+
+            <div id="loading" class="loading hidden">
+                Checking message...
+            </div>
+
+            <div id="result" class="result hidden" aria-live="polite">
+                <h3 id="resultTitle"></h3>
+                <p id="resultText"></p>
+            </div>
+
+            <p class="disclaimer">
+                Predictions are not guaranteed. Always be careful with unknown
+                links, prize offers, and requests for personal information.
+            </p>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-card">
+                <h3>🤖 Machine Learning</h3>
+                <p>Uses a trained model to classify message text.</p>
+            </div>
+            <div class="info-card">
+                <h3>🛡️ Spam Detection</h3>
+                <p>Flags messages that the model identifies as suspicious.</p>
+            </div>
+            <div class="info-card">
+                <h3>📊 Model Evaluation</h3>
+                <p>Performance can be evaluated using precision, recall, and F1 score.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Suspicious Message Classification Using Machine Learning</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
